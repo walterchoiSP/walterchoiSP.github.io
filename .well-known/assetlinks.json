@@ -1,0 +1,11 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "hk.com.sharppoint.mobile.sptrader",
+      "sha256_cert_fingerprints":
+        ["98:8A:6E:23:0D:D0:15:57:81:51:72:B8:84:10:9D:EB:65:4A:7A:74:84:D8:18:F1:6A:F5:3C:C1:8E:7B:87:67"]
+    }
+  }
+]
