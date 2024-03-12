@@ -1,0 +1,11 @@
+{
+  "applinks":{
+    "apps":[],
+    "details":[
+      {
+        "appID": "E745965DCQ.hk.com.sharppoint.mobile.sptrader",
+        "paths": ["*"]
+      }
+    ]
+  }
+}
