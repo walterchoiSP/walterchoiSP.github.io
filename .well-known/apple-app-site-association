@@ -4,19 +4,11 @@
     "details":[
       {
         "appID": "AMT2KXK5KQ.hk.com.sharppoint.mobile.sptrader",
-        "paths": ["/device/*"]
+        "paths": ["*"]
       }, {
         "comment": "Debug Simulator Environment",
         "appID": "E745965DCQ.hk.com.sharppoint.mobile.sptrader",
-        "paths": ["/simulator/*"]
-      },
-      {
-        "appID": "AMT2KXK5KQ.hk.com.sharppoint.mobile.sptrader",
-        "paths": ["/mobile/*"]
-      },
-      {
-        "appID": "E745965DCQ.hk.com.sharppoint.mobile.sptrader",
-        "paths": ["/mobile/*"]
+        "paths": ["*"]
       }
     ]
   }
