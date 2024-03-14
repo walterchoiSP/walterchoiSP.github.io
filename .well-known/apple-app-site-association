@@ -5,6 +5,10 @@
       {
         "appID": "AMT2KXK5KQ.hk.com.sharppoint.mobile.sptrader",
         "paths": ["*"]
+      }, {
+        "comment": "Debug Simulator Environment",
+        "appID": "E745965DCQ.hk.com.sharppoint.mobile.sptrader",
+        "paths": ["*"]
       }
     ]
   }
