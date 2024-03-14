@@ -2,13 +2,13 @@
   "applinks":{
     "apps":[],
     "details":[
-      {
+           {
         "appID": "AMT2KXK5KQ.hk.com.sharppoint.mobile.sptrader",
-        "paths": ["*"]
+        "paths": ["/device/*"]
       }, {
         "comment": "Debug Simulator Environment",
         "appID": "E745965DCQ.hk.com.sharppoint.mobile.sptrader",
-        "paths": ["*"]
+        "paths": ["/simluator/*"]
       }
     ]
   }
