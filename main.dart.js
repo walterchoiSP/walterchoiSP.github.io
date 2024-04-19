@@ -27007,7 +27007,7 @@ l.aV()
 l.sb9(null)
 k.dx$!==$&&A.aj()
 k.dx$=l
-m=l}k.Xq(new A.Sr(o,new A.zI(new A.xm(new A.z6(null),B.Rk,B.i3,"/translations",null),null),n,m,null))
+m=l}k.Xq(new A.Sr(o,new A.zI(new A.xm(new A.z6(null),B.Rk,B.i3,"assets/translations",null),null),n,m,null))
 k.Js()
 return A.P(null,r)}})
 return A.Q($async$avo,r)},
