@@ -1,6 +1,6 @@
 {
-    "name": "sp_web_widget",
-    "short_name": "sp_web_widget",
+    "name": "sp_web_test",
+    "short_name": "sp_web_test",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
