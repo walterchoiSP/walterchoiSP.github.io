@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+        // 請以自己的 App Store 及 Google Play 連結取代以下的 XXXXXXXXXXXXXXXXX
+        // 在未上架前可以一律使用 fallBackUrl (官方網站) 作測試
+      const googlePlayStoreUrl =
+        "https://play.google.com/store/apps/details?id=XXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+      const appleAppStoreUrl =
+        "https://apps.apple.com/hk/app/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+      const fallBackUrl = "https://www.ffg.com.hk";
+      function getMobileOS() {
+        const ua = navigator.userAgent;
+        if (/android/i.test(ua)) {
+          return "Android";
+        } else if (
+          /iPad|iPhone|iPod/.test(ua) ||
+          (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)
+        ) {
+          return "iOS";
+        }
+        return "Other";
+      }
+      window.onload = function () {
+        switch (getMobileOS()) {
+          case "iOS":
+            window.location.replace(appleAppStoreUrl);
+            break;
+          case "Android":
+            window.location.replace(googlePlayStoreUrl);
+            break;
+
+          default:
+            window.location.replace(fallBackUrl);
+            break;
+        }
+      };
+    </script>
+  </body>
+</html>

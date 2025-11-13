@@ -1,0 +1,12 @@
+
+{
+  "applinks":{
+    "apps":[],
+    "details":[
+      {
+        "appID": "24KGU2F292.hk.com.sharppoint.mobile.sptrader.fb",
+        "paths": ["/sptradera/*"]
+      }
+    ]
+  }
+}

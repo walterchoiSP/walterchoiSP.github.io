@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPTraderX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body,
+      html {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("image.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+      }
+
+      .logo {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        height: 36px;
+        width: auto;
+        z-index: 10;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        height: 100%;
+        padding: 90px 20px;
+        text-align: left;
+      }
+
+      .slogan {
+        background: transparent;
+        padding: 0;
+        border-radius: 0;
+        backdrop-filter: none;
+        max-width: 90%;
+      }
+
+      h1 {
+        color: #ffffff;
+        font-family: "Noto Sans HK", sans-serif;
+        font-weight: 700;
+        font-size: 3rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        line-height: 1.4;
+        text-align: left;
+        display: flex;
+        align-items: center;
+      }
+
+      #subtitle {
+        font-size: 1.6rem;
+        line-height: 1.2;
+        margin-bottom: 30px;
+      }
+
+      .title-logo {
+        margin-left: 6px;
+        height: 3rem;
+        width: 3rem;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .body-text {
+        color: #ffffff;
+        font-family: "Noto Sans HK", sans-serif;
+        font-size: 1.2rem;
+        line-height: 1.8;
+        text-align: left;
+        max-width: 600px;
+      }
+
+      .feature {
+        margin-bottom: 20px;
+        background: linear-gradient(
+          to right,
+          rgba(135, 206, 235, 0.6),
+          transparent
+        );
+        padding: 10px 15px;
+        border-radius: 8px;
+      }
+
+      .feature-title {
+        font-weight: 700;
+        font-size: 1.6rem;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+        margin-bottom: 0px;
+      }
+
+      .feature-description {
+        font-style: italic;
+        font-size: 1.1rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        line-height: 1.6;
+      }
+
+      p {
+        display: none;
+      }
+
+      .download-section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .download-title {
+        color: #ffffff;
+        font-family: "Noto Sans HK", sans-serif;
+        font-weight: 700;
+        font-size: 2rem;
+        text-align: center;
+        text-shadow: -2px -2px -4px rgba(0, 0, 0, 0.5);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .download-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+
+      .download-buttons img {
+        height: 50px;
+        width: auto;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+
+      .download-buttons img:hover {
+        transform: scale(1.05);
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        .title-logo {
+          height: 3rem;
+          width: 3rem;
+        }
+
+        .body-text {
+          font-size: 1rem;
+        }
+
+        .feature-title {
+          font-size: 1.4rem;
+        }
+
+        .feature-description {
+          font-size: 0.95rem;
+        }
+
+        .download-title {
+          font-size: 1.5rem;
+        }
+
+        .download-buttons img {
+          height: 40px;
+        }
+
+        .download-buttons {
+          gap: 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 1.8rem;
+        }
+        #subtitle {
+          margin-bottom: 18px;
+        }
+
+        .title-logo {
+          height: 3rem;
+          width: 3rem;
+        }
+
+        .body-text {
+          font-size: 0.9rem;
+        }
+
+        .feature {
+          margin-bottom: 15px;
+        }
+
+        .feature-title {
+          font-size: 1rem;
+          line-height: 1.2;
+        }
+
+        .feature-description {
+          font-size: 0.85rem;
+        }
+
+        .download-title {
+          font-size: 1.2rem;
+        }
+
+        .download-buttons img {
+          height: 40px;
+        }
+
+        .download-buttons {
+          gap: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <img src="sp_logo.png" alt="Logo" class="logo" />
+    <div class="background"></div>
+    <div class="content">
+      <div class="slogan">
+        <h1 id="title"></h1>
+        <h1 id="subtitle"></h1>
+        <div class="body-text" id="bodyText"></div>
+        <p id="description"></p>
+      </div>
+      <div class="download-section">
+        <div class="download-title" id="downloadTitle"></div>
+        <div class="download-buttons">
+          <img
+            id="appstoreBtn"
+            src="download_appstore.png"
+            alt="App Store"
+            onclick="window.open('https://apps.apple.com/hk/app/sptraderx/id6456886948', '_blank')"
+            style="display: none"
+          />
+          <img
+            id="googleplayBtn"
+            src="download_googleplay.png"
+            alt="Google Play"
+            onclick="window.open('https://play.google.com/store/apps/details?id=hk.com.sharppoint.mobile.sptrader&hl=zh_HK', '_blank')"
+            style="display: none"
+          />
+          <img
+            id="apkBtn"
+            src="download_apk.png"
+            alt="Download APK"
+            onclick="window.open('https://spsystem.info/download/sptraderx.apk', '_blank')"
+            style="display: none"
+          />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // 宣傳語句內容（三種語言）
+      const content = {
+        0: {
+          // English
+          title: "New",
+          subtitle: "Speedy Trading Experience",
+          description: "",
+          downloadTitle: "Download Now",
+          features: [
+            {
+              title: "Trader Mode",
+              description: "Tracking & Ordering All in 1",
+            },
+            {
+              title: "Chart Trading",
+              description: "Adjust price in Interactive Charts",
+            },
+          ],
+        },
+        1: {
+          // Traditional Chinese
+          title: "全新",
+          subtitle: "極速交易新體驗",
+          description: "",
+          downloadTitle: "立即下載",
+          features: [
+            {
+              title: "炒家模式",
+              description: "一頁睇晒，睇盤落盤話咁易！",
+            },
+            {
+              title: "圖表落單",
+              description: "互動式圖表，拖曳帶價至方便！",
+            },
+          ],
+        },
+        2: {
+          // Simplified Chinese
+          title: "全新",
+          subtitle: "极速交易新体验",
+          description: "",
+          downloadTitle: "立即下载",
+          features: [
+            {
+              title: "炒家模式",
+              description: "下单、订单、持仓一页全包",
+            },
+            {
+              title: "图表落单",
+              description: "互动式图表，拖曳带价",
+            },
+          ],
+        },
+      };
+
+      // 從 URL 獲取 lang 參數
+      function getLanguageFromURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const lang = urlParams.get("lang");
+
+        // 將參數轉換為數字，預設為 1 (Traditional Chinese)
+        const langCode = parseInt(lang);
+
+        // 驗證語言代碼是否有效 (0, 1, 或 2)
+        if (langCode === 0 || langCode === 1 || langCode === 2) {
+          return langCode;
+        }
+
+        // 預設返回英文
+        return 1;
+      }
+
+      // 檢測平台並顯示相應的下載按鈕
+      function detectPlatform() {
+        const userAgent =
+          navigator.userAgent || navigator.vendor || window.opera;
+
+        const appstoreBtn = document.getElementById("appstoreBtn");
+        const googleplayBtn = document.getElementById("googleplayBtn");
+        const apkBtn = document.getElementById("apkBtn");
+        console.log("userAgent:", userAgent);
+        // 檢測 iOS
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          appstoreBtn.style.display = "block";
+          googleplayBtn.style.display = "none";
+          apkBtn.style.display = "none";
+        }
+        // 檢測 Android
+        else if (/android/i.test(userAgent)) {
+          appstoreBtn.style.display = "none";
+          googleplayBtn.style.display = "block";
+          apkBtn.style.display = "block";
+        }
+        // 其他平台（桌面等）顯示兩個按鈕
+        else {
+          appstoreBtn.style.display = "block";
+          googleplayBtn.style.display = "block";
+          apkBtn.style.display = "none";
+        }
+      }
+
+      // 設置頁面內容
+      function setContent() {
+        const lang = getLanguageFromURL();
+        const selectedContent = content[lang];
+
+        // 設置第一行標題，在 "全新" 後面插入 logo 和 "SPTraderX"
+        const titleHTML =
+          selectedContent.title +
+          ' <img src="app_logo.png" alt="Logo" class="title-logo">SPTraderX';
+        document.getElementById("title").innerHTML = titleHTML;
+
+        // 設置第二行標題
+        document.getElementById("subtitle").textContent =
+          selectedContent.subtitle;
+
+        document.getElementById("description").textContent =
+          selectedContent.description;
+        document.getElementById("downloadTitle").textContent =
+          selectedContent.downloadTitle;
+
+        // 設置功能介紹
+        const bodyTextDiv = document.getElementById("bodyText");
+        bodyTextDiv.innerHTML = selectedContent.features
+          .map(
+            (feature) =>
+              `<div class="feature">
+                    <div class="feature-title">${feature.title}</div>
+                    <div class="feature-description">${feature.description}</div>
+                </div>`
+          )
+          .join("");
+
+        // 根據語言設置 HTML lang 屬性
+        if (lang === 1) {
+          document.documentElement.lang = "zh-TW";
+        } else if (lang === 2) {
+          document.documentElement.lang = "zh-CN";
+        } else {
+          document.documentElement.lang = "en";
+        }
+      }
+
+      // 頁面載入時執行
+      setContent();
+      detectPlatform();
+    </script>
+  </body>
+</html>
