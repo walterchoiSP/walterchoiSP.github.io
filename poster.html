@@ -154,14 +154,20 @@
         flex-wrap: wrap;
       }
 
+      .download-buttons a {
+        display: inline-block;
+        text-decoration: none;
+      }
+
       .download-buttons img {
         height: 50px;
         width: auto;
         cursor: pointer;
         transition: transform 0.2s;
+        display: block;
       }
 
-      .download-buttons img:hover {
+      .download-buttons a:hover img {
         transform: scale(1.05);
       }
 
@@ -257,27 +263,33 @@
       <div class="download-section">
         <div class="download-title" id="downloadTitle"></div>
         <div class="download-buttons">
-          <img
+          <a
             id="appstoreBtn"
-            src="download_appstore.png"
-            alt="App Store"
-            onclick="window.open('http://mlink.spsystem.info/login', '_blank')"
+            href="http://mlink.spsystem.info/login"
+            target="_blank"
+            rel="noopener noreferrer"
             style="display: none"
-          />
-          <img
+          >
+            <img src="download_appstore.png" alt="App Store" />
+          </a>
+          <a
             id="googleplayBtn"
-            src="download_googleplay.png"
-            alt="Google Play"
-            onclick="window.open('http://mlink.spsystem.info/login', '_blank')"
+            href="http://mlink.spsystem.info/login"
+            target="_blank"
+            rel="noopener noreferrer"
             style="display: none"
-          />
-          <img
+          >
+            <img src="download_googleplay.png" alt="Google Play" />
+          </a>
+          <a
             id="apkBtn"
-            src="download_apk.png"
-            alt="Download APK"
-            onclick="window.open('http://mlink.spsystem.info/login', '_blank')"
+            href="http://mlink.spsystem.info/login"
+            target="_blank"
+            rel="noopener noreferrer"
             style="display: none"
-          />
+          >
+            <img src="download_apk.png" alt="Download APK" />
+          </a>
         </div>
       </div>
     </div>
