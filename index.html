@@ -245,6 +245,21 @@
       .profile-card:nth-child(4) {
         animation-delay: 0.3s;
       }
+
+      .spread-converter { margin-top: 25px; padding-top: 25px; border-top: 1px solid #ddd; }
+      .spread-converter h2 { font-size: 1.25rem; color: #2c3e50; margin-bottom: 8px; }
+      .spread-converter p { color: #666; font-size: .9rem; line-height: 1.6; }
+      .spread-drop-zone { display: block; margin: 16px 0; padding: 24px; text-align: center; border: 2px dashed #667eea; border-radius: 12px; background: #f5f6ff; cursor: pointer; }
+      .spread-drop-zone:hover, .spread-drop-zone.drag-over { background: #e9ecff; border-color: #764ba2; }
+      .spread-drop-zone:focus-within { outline: 3px solid #764ba2; outline-offset: 3px; }
+      .spread-drop-zone input { display: block; max-width: 100%; margin: 12px auto 0; }
+      .spread-converter #spread-status { min-height: 28px; overflow-wrap: anywhere; }
+      .spread-converter #spread-status.error { color: #b42318; }
+      .spread-converter textarea { display: block; width: 100%; height: 320px; resize: vertical; padding: 14px; margin-top: 8px; border: 1px solid #ccd0dc; border-radius: 10px; background: #f8f9fc; color: #283044; font-family: Consolas, monospace; font-size: .85rem; line-height: 1.5; white-space: pre; }
+      .spread-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+      .spread-actions button { border: 0; border-radius: 8px; padding: 10px 18px; background: #667eea; color: white; font: inherit; cursor: pointer; }
+      .spread-actions button:disabled { opacity: .45; cursor: not-allowed; }
+      .spread-actions button:focus-visible { outline: 3px solid #764ba2; outline-offset: 3px; }
     </style>
   </head>
   <body>
@@ -349,9 +364,22 @@
         <p>&copy; 2024 SP Trading Platform. All rights reserved.</p>
       </div>
 
-      <div style="text-align: center; margin-top: 20px;">
-        <img src="bird.png" alt="Image 72" style="max-width: 100%; height: auto; border-radius: 10px;" />
-      </div>
+      <section class="spread-converter" aria-labelledby="spread-heading">
+        <h2 id="spread-heading">Tick Table：INI → JSON</h2>
+        <p>選擇 spreadtable.ini，轉換為現有 tick table 的 JSON 格式。僅在本機瀏覽器處理，不會上傳檔案。</p>
+        <label id="spread-drop-zone" class="spread-drop-zone" for="spread-file">
+          拖放一個 .ini 到這裡，或點擊選擇檔案
+          <input id="spread-file" type="file" accept=".ini" />
+        </label>
+        <p id="spread-status" role="status" aria-live="polite">等待 INI 檔案（最大 2 MB）。</p>
+        <label for="spread-json">JSON object</label>
+        <textarea id="spread-json" readonly spellcheck="false" placeholder="轉換結果會顯示在這裡"></textarea>
+        <div class="spread-actions">
+          <button id="spread-copy" type="button" disabled>複製 JSON</button>
+          <button id="spread-download" type="button" disabled>下載 .json</button>
+        </div>
+      </section>
     </div>
+    <script src="spread-table.js" defer></script>
   </body>
 </html>

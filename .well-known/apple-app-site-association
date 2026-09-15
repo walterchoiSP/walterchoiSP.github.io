@@ -6,6 +6,10 @@
       {
         "appID": "24KGU2F292.hk.com.sharppoint.mobile.sptrader.fb",
         "paths": ["/sptradera/*"]
+      },
+      {
+        "appID": "6X5P79R6EW.hk.com.sharppoint.mobile.sptrader.bs",
+        "paths": ["/sptradera/*"]
       }
     ]
   }
