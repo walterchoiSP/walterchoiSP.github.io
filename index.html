@@ -72,6 +72,36 @@
         font-weight: 400;
       }
 
+      .system-id-form {
+        margin-bottom: 25px;
+        padding: 18px;
+        background: #f5f6ff;
+        border-radius: 12px;
+      }
+
+      .system-id-form label { display: block; font-weight: 600; margin-bottom: 8px; }
+      .system-id-controls { display: flex; flex-wrap: wrap; gap: 10px; }
+      .system-id-controls input {
+        flex: 1 1 180px;
+        min-width: 0;
+        padding: 12px;
+        border: 1px solid #ccd0dc;
+        border-radius: 8px;
+        font: inherit;
+      }
+      .system-id-controls button {
+        padding: 12px 20px;
+        border: 0;
+        border-radius: 8px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        font: inherit;
+        font-weight: 500;
+        cursor: pointer;
+      }
+      .system-id-controls :focus-visible { outline: 3px solid #764ba2; outline-offset: 3px; }
+      .system-id-form p { margin-top: 8px; color: #666; font-size: .85rem; line-height: 1.5; }
+
       .profile-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -269,6 +299,16 @@
         <p>Profile Management Dashboard</p>
       </div>
 
+      <form class="system-id-form" action="https://mlink.spsystem.info/sptradera/login" method="get">
+        <label for="system-id">System ID</label>
+        <div class="system-id-controls">
+          <input id="system-id" name="host" type="text" placeholder="e.g. FB_F" required pattern=".*\S.*" title="Enter a System ID containing at least one non-space character." autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="system-id-help" />
+          <button type="submit">Open Deeplink</button>
+          <button id="open-custom-url" type="submit">Open Custom URL</button>
+        </div>
+        <p id="system-id-help">Enter your System ID to open its login deeplink or custom URL.</p>
+      </form>
+
       <div class="profile-grid">
 
         <a href="https://mlink.spsystem.info/sptradera/login?host=FB_F" class="profile-card">
@@ -309,7 +349,7 @@
               <span class="material-icons">mobile_friendly</span>
             </div>
             <div class="profile-info">
-              <h3>Mobile UAT Profile</h3>
+              <h3>UAT Profilee</h3>
               <p>Fulbright & Brightsmart Mobile App</p>
             </div>
           </div>
@@ -325,7 +365,7 @@
               <span class="material-icons">mobile_friendly</span>
             </div>
             <div class="profile-info">
-              <h3>HTTPS Mobile UAT Profile</h3>
+              <h3>UAT Profile</h3>
               <p>HTTPS Fulbright & Brightsmart Mobile App</p>
             </div>
           </div>
@@ -365,6 +405,15 @@
         </div>
       </section>
     </div>
+    <script>
+      document.querySelector('.system-id-form').addEventListener('submit', function (event) {
+        if (event.submitter && event.submitter.id === 'open-custom-url') {
+          event.preventDefault();
+          const systemId = document.getElementById('system-id').value;
+          window.location.href = 'sptradera://mlink.spsystem.info/sptradera/login?host=' + encodeURIComponent(systemId);
+        }
+      });
+    </script>
     <script src="spread-table.js" defer></script>
   </body>
 </html>
